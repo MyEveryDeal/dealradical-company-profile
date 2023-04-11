@@ -1,5 +1,4 @@
 <?php ?>
-<form action="transaction-result.php" method="post">
     <div class="row">
     <div class="col-md-6 mb-3">
             <label for="transaction_date">Transaction date</label>
@@ -98,9 +97,10 @@
             </div>
         </div>
     </div>
+    
                                                 
     <div class="form-group message-btn">
         <button type="submit" onclick="submit()" class="theme-btn style-one w-full">Submit</button>
     </div>
-</form>
+
 

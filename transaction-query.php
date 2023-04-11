@@ -1,7 +1,7 @@
 <?php 
     @include_once("header.php");
     $_SESSION['page-title-content-box'] = 'Query transaction';
-    $_SESSION['page-title-bread-crumb'] = "<li>Check transaction validity</li>";
+    $_SESSION['page-title-bread-crumb'] = "<li>NIBSS CHECKER</li>";
     @include_once('components/page-title.php');
 ?>   
     <section class="policy-section bg-color-1 pt-2 mb-4" style="z-index:9999;">
@@ -12,7 +12,7 @@
                         <div class="tabs-box">
                             <div class="tab-btn-box">
                                 <ul class="tab-btns tab-buttons clearfix">
-                                    <li class="tab-btn active-btn text-dark" data-tab="#tab-4">One Off User</li>
+                                    <li class="tab-btn active-btn text-dark" data-tab="#tab-4">One off user</li>
                                     <li class="tab-btn text-dark" data-tab="#tab-5">Members Login</li>
                                 </ul>
                             </div>
@@ -20,7 +20,9 @@
                                 <div class="tab active-tab" id="tab-4">
                                     <div class="content-inner">
                                         <p class="text-dark">Leveraging NIBSS to validate lagging transactions at a click or call us on <a href="tel:2347017518376" >2347017518376</a></p>
-                                        <?php @include_once('forms/transaction-query-form.php')  ;   ?>
+                                        <form action="transaction-check-out.php" method="post">
+                                            <?php @include_once('forms/transaction-query-form.php')  ;   ?>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="tab" id="tab-5">
@@ -37,14 +39,7 @@
             </div>
         </div>
     </section>
-    <script>
-        function submit(){
-            alert();
-            var ok = confirm();
-            console.log(e);
-        }
-    </script>
-  <!--Page Title-->
+   
   
 
 <?php 
