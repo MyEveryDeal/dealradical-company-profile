@@ -1,6 +1,13 @@
 <?php 
 // when installed via composer
 ini_set('display_errors', true);
+session_start();
+$_SESSION['auth'] = [
+    'name' => 'Edward Muhammed',
+    'email' => 'edwardm@email.domain',
+];
+$auth_user = $_SESSION['auth']?? null;
+
 // require_once __DIR__ .'/vendor/autoload.php';
 
 // // use the factory to create a Faker\Generator instance
@@ -163,73 +170,28 @@ ini_set('display_errors', true);
                                     <li class="<?php echo str_ends_with($_SERVER['REQUEST_URI'], 'projects.php') ?  'current': '' ; ?>"><a href="projects.php">Projects</a></li>
                                     <li class="<?php echo str_ends_with($_SERVER['REQUEST_URI'], 'about.php') ?  'current': '' ; ?>"><a href="about.php">About</a></li>
                                     
-
-                                    <!-- <li class="dropdown"><a href="index.html">Elements</a>
-                                        <div class="megamenu">
-                                            <div class="row clearfix">
-                                                <div class="col-lg-3 column">
-                                                    <ul>
-                                                        <li>
-                                                            <h4>Elements 1</h4>
-                                                        </li>
-                                                        <li><a href="feature-element-1.html">Feature 01</a></li>
-                                                        <li><a href="feature-element-2.html">Feature 02</a></li>
-                                                        <li><a href="feature-element-3.html">Feature 03</a></li>
-                                                        <li><a href="about-element-1.html">About 01</a></li>
-                                                        <li><a href="about-element-2.html">About 02</a></li>
-                                                        <li><a href="about-element-3.html">About 03</a></li>
-                                                        <li><a href="about-element-4.html">About 04</a></li>
-                                                        <li><a href="stats-element.html">Stats Element</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-3 column">
-                                                    <ul>
-                                                        <li>
-                                                            <h4>Elements 2</h4>
-                                                        </li>
-                                                        <li><a href="news-element-1.html">News 01</a></li>
-                                                        <li><a href="news-element-2.html">News 02</a></li>
-                                                        <li><a href="funfact-element-1.html">Fun Fact 01</a></li>
-                                                        <li><a href="funfact-element-2.html">Fun Fact 02</a></li>
-                                                        <li><a href="service-element-1.html">Service 01</a></li>
-                                                        <li><a href="service-element-2.html">Service 02</a></li>
-                                                        <li><a href="skills-element.html">Skills Element</a></li>
-                                                        <li><a href="clients-element.html">Clients</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-3 column">
-                                                    <ul>
-                                                        <li>
-                                                            <h4>Elements 3</h4>
-                                                        </li>
-                                                        <li><a href="team-element-1.html">Team 01</a></li>
-                                                        <li><a href="team-element-2.html">Team 02</a></li>
-                                                        <li><a href="pricing-element.html">Pricing</a></li>
-                                                        <li><a href="testimonial-element-1.html">Testimonial 01</a></li>
-                                                        <li><a href="testimonial-element-2.html">Testimonial 02</a></li>
-                                                        <li><a href="testimonial-element-3.html">Testimonial 03</a></li>
-                                                        <li><a href="work-element-1.html">Working 01</a></li>
-                                                        <li><a href="work-element-2.html">Working 02</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-3 column">
-                                                    <ul>
-                                                        <li>
-                                                            <h4>Elements 4</h4>
-                                                        </li>
-                                                        <li><a href="project-element-1.html">Project 01</a></li>
-                                                        <li><a href="project-element-2.html">Project 02</a></li>
-                                                        <li><a href="chart-element.html">Chart Element</a></li>
-                                                        <li><a href="footer-element-1.html">Footer 01</a></li>
-                                                        <li><a href="footer-element-2.html">Footer 02</a></li>
-                                                        <li><a href="footer-element-3.html">Footer 03</a></li>
-                                                        <li><a href="footer-element-4.html">Footer 04</a></li>
-                                                        <li><a href="footer-element-5.html">Footer 05</a></li>
-                                                    </ul>
+                                    <?php if (!is_null($auth_user)){?> 
+                                        <li class="dropdown <?php echo str_contains($_SERVER['REQUEST_URI'], 'service-') ?  'current': '' ; ?> ">
+                                            <a href="#"><?php echo $auth_user['name']?? "Account" ?></a>
+                                            <ul>
+                                                <li  ><a href="logout.php">Logout</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- <li class="dropdown"><a href="#"></a>
+                                            <div class="megamenu">
+                                                <div class="row clearfix">
+                                                    <div class="col-lg-3 column">
+                                                        <ul>
+                                                            <li>
+                                                                <h4>Dashboard 1</h4>
+                                                            </li>
+                                                            <li><a href="feature-element-1.html">Logout</a></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li> -->
+                                        </li> -->
+                                    <?php } ?>
                                     <li class="<?php echo str_contains($_SERVER['REQUEST_URI'], 'contact.php') ?  'current': '' ; ?> "><a href="contact.php">Contact</a></li>
                                 </ul>
                             </div>
