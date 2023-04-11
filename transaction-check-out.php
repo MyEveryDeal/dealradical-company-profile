@@ -54,8 +54,7 @@
                                         <div class="col-md-6">
                                             <div class="d-block my-3">
                                                 <h4 class="text-muted">Payment</h4>
-                                                <hr class="">
-                                                <div class="d-md-flex justify-content-between">
+                                                <div class="d-md-flex justify-content-between nav nav-tabs">
                                                     <div class="custom-control custom-radio m-2">
                                                         <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
                                                         <label class="custom-control-label" for="credit">Debit Card</label>
@@ -71,7 +70,7 @@
                                                 </div>
                                                 
                                                 <div class="tab-content" id="v-pills-tabContent">
-                                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                                    <div class="tab-pane fade show active" id="v-pills-debit-card" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                                         <div class="row">
                                                             <div class="col-md-6 mb-3">
                                                                 <label for="cc-name">Name on card</label>
@@ -104,7 +103,19 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+
+                                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="cc-name">Wallet ID</label>
+                                                                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                                                <small class="text-muted">Full name as displayed on card</small>
+                                                                <div class="invalid-feedback">
+                                                                    Wallet ID is required
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
                                                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                                                 </div>
