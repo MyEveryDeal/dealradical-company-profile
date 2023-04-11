@@ -1,6 +1,8 @@
-<?php ?>
-<form action="transaction-result.php" method="post">
-    <div class="row">
+<?php 
+  $errors = [];
+?>
+<div class="row">
+        
         <div class="col-md-12 mb-3">
             <label for="email">Email</label>
             <div class="input-group  ">
@@ -28,4 +30,3 @@
     <div class="form-group message-btn">
         <button type="submit" onclick="submit()" class="theme-btn style-one w-full">Login</button>
     </div>
-</form>

@@ -208,3 +208,13 @@
 <!-- Mirrored from azim.commonsupport.com/Fionca/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Feb 2023 18:18:11 GMT -->
 
 </html>
+
+<?php 
+ if(isset($_SESSION['errors']))
+    unset($_SESSION['errors']);
+
+if(isset($_SESSION['message']))
+    unset($_SESSION['message']);
+
+if(isset($_SESSION['success']))
+    unset($_SESSION['success']);

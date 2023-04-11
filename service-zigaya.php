@@ -1,21 +1,9 @@
 <?php 
     include_once("header.php");
+    $_SESSION['page-title-content-box'] = 'Zigaya';
+    $_SESSION['page-title-bread-crumb'] = "<li>Zigaya</li>";
+    @include_once('components/page-title.php');
 ?>
-    <!--Page Title-->
-    <section class="page-title centred" style="background-image: url(assets/images/background/page-title-4.jpg);">
-        <div class="auto-container">
-            <div class="content-box clearfix">
-                <h1>Zigaya</h1>
-                <ul class="bread-crumb clearfix">
-                    <li><a href="index.php">Home</a></li>
-                    <li>Zigaya</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--End Page Title-->
-
-
     <!-- service-details -->
     <section class="service-details">
         <div class="auto-container">

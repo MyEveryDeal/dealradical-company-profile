@@ -1,22 +1,11 @@
 <?php 
-    include_once("header.php");
+   
+   @include_once("header.php");
+   $_SESSION['page-title-content-box'] = 'Contact';
+   $_SESSION['page-title-bread-crumb'] = "<li>Get in touch</li>";
+   @include_once('components/page-title.php');
+
 ?>
-
-    <!--Page Title-->
-    <section class="page-title centred" style="background-image: url(assets/images/background/page-title-5.jpg);">
-        <div class="auto-container">
-            <div class="content-box clearfix">
-                <h1>Contact Us</h1>
-                <ul class="bread-crumb clearfix">
-                    <li><a href="index.html">Home</a></li>
-                    <li>Get In Touch</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--End Page Title-->
-
-
     <!-- contact-information -->
     <section class="contact-information centred">
         <div class="auto-container">

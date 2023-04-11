@@ -1,17 +1,9 @@
 <?php 
-    include_once("header.php");
-?>
- <section class="page-title centred" style="background-image: url(assets/images/background/page-title-4.jpg);">
-        <div class="auto-container">
-            <div class="content-box clearfix">
-                <h1>Query transaction</h1>
-                <ul class="bread-crumb clearfix">
-                    <li><a href="index.php">Check transaction validity</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-   
+    @include_once("header.php");
+    $_SESSION['page-title-content-box'] = 'Query transaction';
+    $_SESSION['page-title-bread-crumb'] = "<li>Check transaction validity</li>";
+    @include_once('components/page-title.php');
+?>   
     <section class="policy-section bg-color-1 pt-2 mb-4" style="z-index:9999;">
         <div class="auto-container">
             <div class="col-xl-12 col-lg-12 col-md-12 inner-column">
@@ -33,7 +25,9 @@
                                 </div>
                                 <div class="tab" id="tab-5">
                                     <p class="text-dark">Gain member's full access to NIBSS transaction tracking and validation</p>
-                                    <?php @include_once('forms/login-form.php')  ;   ?>
+                                    <form action="auth/login.php" method="post" >
+                                        <?php @include_once('forms/login-form.php')  ;   ?>
+                                    </form>
                                 </div>
 
                             </div>

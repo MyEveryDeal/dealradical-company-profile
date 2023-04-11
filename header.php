@@ -1,11 +1,8 @@
 <?php 
-// when installed via composer
 ini_set('display_errors', true);
 session_start();
-$_SESSION['auth'] = [
-    'name' => 'Edward Muhammed',
-    'email' => 'edwardm@email.domain',
-];
+
+
 $auth_user = $_SESSION['auth']?? null;
 
 // require_once __DIR__ .'/vendor/autoload.php';
@@ -24,7 +21,7 @@ $auth_user = $_SESSION['auth']?? null;
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from azim.commonsupport.com/Fionca/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Feb 2023 18:16:11 GMT -->
+<!-- Mirrored from azim.commonsupport.com/Fionca/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 Feb 2023 18:16:11 GMT -->
 
 <head>
     <meta charset="utf-8">
@@ -36,9 +33,6 @@ $auth_user = $_SESSION['auth']?? null;
     <!-- Fav Icon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-    <!-- Google Fonts -->
-    <link href="../../fonts.googleapis.com/css9233.css?family=Arimo:400,400i,700,700i&amp;display=swap"
-        rel="stylesheet">
 
     <!-- Stylesheets -->
     <link href="assets/css/font-awesome-all.css" rel="stylesheet">
@@ -81,7 +75,7 @@ $auth_user = $_SESSION['auth']?? null;
     <div class="popup-inner">
         <div class="overlay-layer"></div>
         <div class="search-form">
-            <form method="post" action="https://azim.commonsupport.com/Fionca/index.html">
+            <form method="post" action="https://azim.commonsupport.com/Fionca/index.php">
                 <div class="form-group">
                     <fieldset>
                         <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
@@ -91,11 +85,11 @@ $auth_user = $_SESSION['auth']?? null;
             </form>
             <h3>Recent Search Keywords</h3>
             <ul class="recent-searches">
-                <li><a href="index.html">Finance</a></li>
-                <li><a href="index.html">Idea</a></li>
-                <li><a href="index.html">Service</a></li>
-                <li><a href="index.html">Growth</a></li>
-                <li><a href="index.html">Plan</a></li>
+                <li><a href="index.php">Finance</a></li>
+                <li><a href="index.php">Idea</a></li>
+                <li><a href="index.php">Service</a></li>
+                <li><a href="index.php">Growth</a></li>
+                <li><a href="index.php">Plan</a></li>
             </ul>
         </div>
     </div>
@@ -112,11 +106,11 @@ $auth_user = $_SESSION['auth']?? null;
                     </ul>
                     <div class="top-right pull-right">
                         <ul class="social-links clearfix">
-                            <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="index.php"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="index.php"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="index.php"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="index.php"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="index.php"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -142,15 +136,15 @@ $auth_user = $_SESSION['auth']?? null;
                                 <ul class="navigation clearfix">
                                     <li class="<?php echo str_ends_with($_SERVER['REQUEST_URI'], 'index.php') ?  'current': '' ; ?> "><a href="index.php">Home</a>
                                         <ul>
-                                            <li><a href="index.html">Home Page One</a></li>
+                                            <li><a href="index.php">Home Page One</a></li>
                                             <li><a href="index-2.html">Home Page Two</a></li>
                                             <li><a href="index-3.html">Home Page Three</a></li>
                                             <li><a href="index-4.html">Home Page Four</a></li>
                                             <li><a href="index-5.html">Home Page Five</a></li>
                                             <li><a href="index-onepage.html">Home OnePage</a></li>
-                                            <li class="dropdown"><a href="index.html">Header Style</a>
+                                            <li class="dropdown"><a href="index.php">Header Style</a>
                                                 <ul>
-                                                    <li><a href="index.html">Header Style One</a></li>
+                                                    <li><a href="index.php">Header Style One</a></li>
                                                     <li><a href="index-2.html">Header Style Two</a></li>
                                                     <li><a href="index-3.html">Header Style Three</a></li>
                                                     <li><a href="index-4.html">Header Style Four</a></li>
@@ -169,12 +163,15 @@ $auth_user = $_SESSION['auth']?? null;
                                     </li>
                                     <li class="<?php echo str_ends_with($_SERVER['REQUEST_URI'], 'projects.php') ?  'current': '' ; ?>"><a href="projects.php">Projects</a></li>
                                     <li class="<?php echo str_ends_with($_SERVER['REQUEST_URI'], 'about.php') ?  'current': '' ; ?>"><a href="about.php">About</a></li>
-                                    
+                                    <li class="<?php echo str_contains($_SERVER['REQUEST_URI'], 'contact.php') ?  'current': '' ; ?> "><a href="contact.php">Contact</a></li>
+
                                     <?php if (!is_null($auth_user)){?> 
                                         <li class="dropdown <?php echo str_contains($_SERVER['REQUEST_URI'], 'service-') ?  'current': '' ; ?> ">
-                                            <a href="#"><?php echo $auth_user['name']?? "Account" ?></a>
+                                            <a href="#"> <i class="fas fa-user"></i> <?php echo $auth_user['name']?? "Account" ?></a>
                                             <ul>
-                                                <li  ><a href="logout.php">Logout</a></li>
+                                                <li><a href="dashboard.php">Dashboard</a></li>
+
+                                                <li><a href="auth/logout.php">Logout</a></li>
                                             </ul>
                                         </li>
                                         <!-- <li class="dropdown"><a href="#"></a>
@@ -192,7 +189,6 @@ $auth_user = $_SESSION['auth']?? null;
                                             </div>
                                         </li> -->
                                     <?php } ?>
-                                    <li class="<?php echo str_contains($_SERVER['REQUEST_URI'], 'contact.php') ?  'current': '' ; ?> "><a href="contact.php">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -217,7 +213,7 @@ $auth_user = $_SESSION['auth']?? null;
         <div class="auto-container">
             <div class="outer-box clearfix">
                 <div class="logo-box pull-left">
-                    <figure class="logo"><a href="index.html"><img
+                    <figure class="logo"><a href="index.php"><img
                                 src="assets/images/logo-myeverydeal.png"
                                 alt=""></a>
                     </figure>
@@ -239,7 +235,7 @@ $auth_user = $_SESSION['auth']?? null;
         <div class="close-btn"><i class="fas fa-times"></i></div>
 
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="assets/images/mobile-logo.png" alt="" title=""></a>
+            <div class="nav-logo"><a href="index.php"><img src="assets/images/mobile-logo.png" alt="" title=""></a>
             </div>
             <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             </div>
@@ -253,12 +249,28 @@ $auth_user = $_SESSION['auth']?? null;
             </div>
             <div class="social-links">
                 <ul class="clearfix">
-                    <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                    <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                    <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                    <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                    <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                    <li><a href="index.php"><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="index.php"><span class="fab fa-facebook-square"></span></a></li>
+                    <li><a href="index.php"><span class="fab fa-pinterest-p"></span></a></li>
+                    <li><a href="index.php"><span class="fab fa-instagram"></span></a></li>
+                    <li><a href="index.php"><span class="fab fa-youtube"></span></a></li>
                 </ul>
             </div>
         </nav>
     </div><!-- End Mobile Menu -->
+    
+    
+    <?php if(isset($_SESSION['errors'])) {?> 
+        <div class="alert alert-danger alert-dismissible fade show mt-2 mb-0" role="alert">
+            <strong>Form error!</strong> You should check in on some of those fields below.
+            <ul>
+                <?php foreach($_SESSION['errors'] as $key=>$error)  { ?>
+                    <li><?php echo $error ?></li>
+                <?php } ?>
+            </ul>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php } ?>
+       
